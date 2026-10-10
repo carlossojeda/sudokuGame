@@ -1,0 +1,52 @@
+html {
+     box-sizing: border-box; 
+     font-size: 62.5%;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+} 
+*, *:before, *:after { 
+     box-sizing: inherit; 
+}
+body{
+     background-color: rgba(88, 88, 88, 0.26);
+}
+
+
+.header{
+     color: rgb(42, 42, 243);
+     font-weight: bold;
+     text-align: center;
+     text-shadow: 2px 2px 4px rgba(19, 155, 233, .5);
+}
+
+h1{
+     font-size: 4rem;
+     margin-bottom: 6rem;
+}
+
+.startGame{
+     text-align: center;
+}
+.startGame--btn{
+     padding: 1.3rem;
+     border-radius: 10px;
+     font-size: 2.5em;
+     cursor: pointer;
+     background-color: rgb(42, 42, 243);
+     color: white;
+     font-weight: 700;
+}
+
+.startGame--btn:hover{
+     background-color: rgb(38, 38, 173);
+     transition: .3s;
+}
+
+
+
+/* CHECkBOARD */
+
+.mainSquare{
+     display: grid;
+     grid-template-columns: repeat(1/3);
+
+}
