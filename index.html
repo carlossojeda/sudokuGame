@@ -3,9 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SudokuGame</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+    <!-- top nav -->
+    <nav>
+         <div class="nav-container">
+                <a href="#" class="nav-logo">
+                    Sudoku
+                </a>
+                <div class="dark-mode-toggle" id="dark-mode-toggle">
+                    <li class="light">Light Mode</li>
+                    <li class="darkMood">Dark Mode</li>
+                </div>
+            </div>
+    </nav>
+    <!-- end top nav -->
+
+    <!-- main -->
+
+    <main class="main">
+        <!-- start screen -->
+        <div class="start-screen active" id="start-screen">
+            <input type="text" placeholder="Enter your name" maxlength="15" class="input-name" id="input-name">
+            <div class="btn" id="btn-level">
+                Easy
+            </div>
+            <div class="btn" id="btn-continue">Continue</div>
+            <div class="btn btn-blue" id="btn-play">New game</div>
+
+        </div>
+        <!-- end screen  -->
+    </main>
+    <!-- end main  -->
+
+
+
+    <script src="script.js"></script>
 </body>
 </html>
