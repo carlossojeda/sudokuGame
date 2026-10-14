@@ -3,6 +3,7 @@ const btnContinue = document.getElementById('btn-continue');
 const name_input = document.getElementById('input-name');
 const start_screen = document.getElementById('start-screen');
 const btn_play = document.getElementById('btn-play');
+const btn_level = document.getElementById('btn-level')
 
 
 
@@ -14,9 +15,21 @@ toggle.addEventListener('click', () =>{
 
 })
 
+//INITIAL VALUE
+
+let level_index = 0;
+let level = CONSTANT.LEVEL[level_index]
+
+btn_level.addEventListener('click', (e) => {
+    level_index = level_index + 1 > CONSTANT.LEVEL.length - 1 ? 0 : level_index + 1;
+    level = CONSTANT.LEVEL[level_index];
+    e.target.innerHTML = CONSTANT.LEVEL_NAME[level_index];
+})
+
+
 btn_play.addEventListener('click', () =>{
     if(name_input.value.trim().length > 0 ){
-        alert('Start Game')
+        alert(`level => ${level}`)
     }else{
         name_input.classList.add('input-err')
         setTimeout(() =>{
