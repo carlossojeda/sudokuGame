@@ -7,25 +7,146 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <header class="header">
-        <H1>Welcome to SudokuGame</H1>
-    </header>
 
-    <div class="startGame">
-        <button class="startGame--btn" id="startGameBtn">Start a new game</button>
-    </div>
+    <!-- top nav -->
+    <nav>
+         <div class="nav-container">
+                <a href="#" class="nav-logo">
+                    Sudoku
+                </a>
+                <div class="dark-mode-toggle" id="dark-mode-toggle">
+                    <li class="light">Light Mode</li>
+                    <li class="darkMood">Dark Mode</li>
+                </div>
+            </div>
+    </nav>
+    <!-- end top nav -->
 
-    <main class="sudokuBoard">
-        <div class="mainSquare">
-            <div class="columns">
-                <p>1</p>
-                <p>2</p>
-                <p>3</p>
+    <!-- main -->
+
+    <main class="main">
+        <!-- start screen -->
+        <div class="start-screen" id="start-screen">
+            <input type="text" placeholder="Enter your name" maxlength="15" class="input-name" id="input-name">
+            <div class="btn" id="btn-level">
+                Easy
+            </div>
+            <div class="btn" id="btn-continue">Continue</div>
+            <div class="btn btn-blue" id="btn-play">New game</div>
+
+        </div>
+        <!-- end screen  -->
+         
+        <!-- start game screen -->
+        <div class="main-game active">
+            <div class="main-sudoku-grid">
+                <!-- 81 cells -->
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+                <div class="main-grid-cell"></div>
+            </div>
+
+            <div class="main-game-info">
+                <div class="main-game-info-box main-game-info-name">
+                    <span id="player-name">tuat</span>
+                </div>
+                <div class="main-game-info-box main-game-info-level">
+                    <span id="game-level">Easy</span>
+                </div>
+            </div>
+
+            <div class="main-game-info-box .main-game-info-time">
+                <span id="game-time">10:20</span>
+                <div class="pause-btn" id="btn-pause">
+                    <i class="bx bx-pause">||</i>
+                </div>
             </div>
         </div>
-    </main>
 
+         <!-- end game screen -->
+    </main>
+    <!-- end main  -->
+
+
+    <script src="constant.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
