@@ -9,8 +9,10 @@ const player_name = document.getElementById('player-name')
 const game_level = document.getElementById('game-level')
 const game_time = document.getElementById('game-time')
 const game_screen = document.getElementById('game-screen')
-
-
+const pauseScreen = document.getElementById('pause-screen');
+const btn_resume = document.getElementById('btn-resume');
+const btn_NewGame = document.getElementById('btn-new-game');
+const btn_pause = document.getElementById('btn-pause');
 
 toggle.addEventListener('click', () =>{
     document.body.classList.toggle('dark');
@@ -56,6 +58,10 @@ const getPlayerName = () => localStorage.getItem('player_name');
 
 const showTime = (seconds) => new Date(seconds * 1000).toISOString().substring(11, 19)
 
+const initSudoku = () => {
+    
+} 
+
 
 const startGame = () => {
     start_screen.classList.remove('active');
@@ -78,6 +84,15 @@ const startGame = () => {
 
 }
 
+const returnStartScreen = () => {
+    clearInterval(timer);
+    pause = false;
+    seconds = 0;
+    start_screen.classList.add('active')
+    game_screen.classList.remove('active')
+    pauseScreen.classList.remove('active')
+}
+
 btn_level.addEventListener('click', (e) => {
     level_index = level_index + 1 > CONSTANT.LEVEL.length - 1 ? 0 : level_index + 1;
     level = CONSTANT.LEVEL[level_index];
@@ -97,6 +112,20 @@ btn_play.addEventListener('click', () =>{
     }
 })
 
+btn_pause.addEventListener('click', () =>{
+    pauseScreen.classList.add('active')
+    pause = true
+})
+
+btn_resume.addEventListener('click', () => {
+    pauseScreen.classList.remove('active');
+    pause = false
+})
+
+btn_NewGame.addEventListener('click', () => {
+    returnStartScreen()
+})
+
 const init = () =>{
     const darkmode = JSON.parse(localStorage.getItem('darkmode'));
     document.body.classList.add(darkmode ? 'dark' : 'a');
@@ -106,6 +135,12 @@ const init = () =>{
     btnContinue.style.display = game ? 'grid' : 'none'
 
     initGameGrid();
+
+    if(getPlayerName()){
+        name_input.value = getPlayerName();
+    }else{
+        name_input.focus()
+    }
 }
 
 init()
