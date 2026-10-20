@@ -42,6 +42,8 @@ html {
 
 body{
     background-color: var(--bg-body);
+    overflow-x: hidden;
+    user-select: none;
 }
 
 input{
@@ -76,7 +78,7 @@ nav{
 
 .nav-container{
     max-width: 75rem;
-    margin: 2rem auto;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -117,7 +119,6 @@ li{
 
 
 .main{
-    height: 30rem;
     padding: var(--nav-size);
     display: grid;
     place-items: center;
@@ -137,7 +138,7 @@ li{
     width: 100%;
     height: 100%;
     transform: translateX(-100%);
-    transition: transform .3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -192,11 +193,14 @@ li{
 @keyframes bounce{
     0%{
         transform: translateX(0);
-    }25%{
+    }
+    25%{
         transform: translateX(2rem);
-    }50%{
+    }
+    50%{
         transform: translateX(-2rem);
-    }100%{
+    }
+    100%{
         transform: translateX(0);
     }
 }
@@ -208,13 +212,12 @@ li{
     flex-direction: column;
     justify-content: space-between;
     padding: 30px 0;
-    transform: translateX(100%);
+    transform: translateX(500%);
     transition: transform .3s ease-in-out;
 }
 
 .main-game.active{
     transform: translateX(0);
-    margin-top: 5rem;
 }
 
 .main-sudoku-grid{
@@ -301,4 +304,27 @@ li{
     place-items: center;
     cursor: pointer;
 
+}
+
+.numbers{
+    margin-top: var(--space-y);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.number{
+    height: var(--sudoku--cell-size);
+    border-radius: var(--border-radious);
+    background-color: var(--bg-main);
+    color: var(--color-txt);
+    display: grid;
+    place-items: center;
+    font-size: 2.7rem;
+    cursor: pointer;
+}
+
+.delete{
+    background-color: var(--red);
+    color: var(--white);
 }
