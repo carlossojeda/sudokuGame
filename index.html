@@ -26,7 +26,7 @@
 
     <main class="main">
         <!-- start screen -->
-        <div class="start-screen" id="start-screen">
+        <div class="start-screen active" id="start-screen">
             <input type="text" placeholder="Enter your name" maxlength="15" class="input-name" id="input-name">
             <div class="btn" id="btn-level">
                 Easy
@@ -38,7 +38,7 @@
         <!-- end screen  -->
          
         <!-- start game screen -->
-        <div class="main-game active">
+        <div class="main-game" id="game-screen">
             <div class="main-sudoku-grid">
                 <!-- 81 cells -->
                 <div class="main-grid-cell"></div>
@@ -139,9 +139,24 @@
                     <i class="bx bx-pause">||</i>
                 </div>
             </div>
+
+            <div class="numbers">
+                <div class="number">1</div>
+                <div class="number">2</div>
+                <div class="number">3</div>
+                <div class="number">4</div>
+                <div class="number">5</div>
+                <div class="number">6</div>
+                <div class="number">7</div>
+                <div class="number">8</div>
+                <div class="number">9</div>
+                <div class="number delete" id="btn-delete">X</div>
+            </div>
         </div>
 
          <!-- end game screen -->
+
+         
     </main>
     <!-- end main  -->
 
