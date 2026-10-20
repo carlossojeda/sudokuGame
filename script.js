@@ -106,6 +106,7 @@ const init = () =>{
     btnContinue.style.display = game ? 'grid' : 'none'
 
     initGameGrid();
+    
 }
 
 init()

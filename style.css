@@ -327,4 +327,6 @@ li{
 .delete{
     background-color: var(--red);
     color: var(--white);
+} * + * {
+    margin-top: 2rem;
 }
