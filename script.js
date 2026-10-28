@@ -15,6 +15,10 @@ const btn_NewGame = document.getElementById('btn-new-game');
 const btn_pause = document.getElementById('btn-pause');
 const number_inputs = document.querySelectorAll('.number');
 const btnDelete = document.getElementById('btn-delete');
+const result_Screen = document.getElementById('result-screen');
+const result_Time = document.getElementById('result-time');
+const btn_NewGame2 = document.getElementById('btn-new-game2')
+
 
 toggle.addEventListener('click', () =>{
     document.body.classList.toggle('dark');
@@ -191,7 +195,7 @@ const checkErr = (value) => {
     for(let i = 0; i < CONSTANT.BOX_SIZE; i++){
         for(let j = 0; j < CONSTANT.BOX_SIZE; j++){
             let cell = cells[9 * (box_start_row + i) + (box_start_col + j)];
-            if(cell.classList.contains('selected')) addErr(cell)
+            if(!cell.classList.contains('selected')) addErr(cell)
         }
     }
 
@@ -246,8 +250,9 @@ const isGameWin = () => sudokuCheck(su_answer);
 
 const showResult = () => {
     clearInterval(timer);
-    alert('win');
-    // show result screen 
+    result_Screen.classList.add('active');
+    result_Time.innerHTML = showTime(seconds);
+
 
 
 }
@@ -331,6 +336,8 @@ const returnStartScreen = () => {
     start_screen.classList.add('active')
     game_screen.classList.remove('active')
     pauseScreen.classList.remove('active')
+    result_Screen.classList.remove('active')
+
 }
 
 btn_level.addEventListener('click', (e) => {
@@ -377,6 +384,9 @@ btn_resume.addEventListener('click', () => {
 })
 
 btn_NewGame.addEventListener('click', () => {
+    returnStartScreen()
+})
+btn_NewGame2.addEventListener('click', () => {
     returnStartScreen()
 })
 

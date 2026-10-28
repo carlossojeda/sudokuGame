@@ -337,7 +337,7 @@ li{
 }
 
 
-.pause-screen{
+.pause-screen, .result-screen{
     position: absolute;
     top: -100;
     left: 0;
@@ -351,18 +351,37 @@ li{
 }
 
 
-.pause-screen.active{
+.pause-screen.active, .result-screen.active{
     display: flex;
 }
 
-.pause-screen > * + * {
+.pause-screen > * + *,
+.result-screen > * + * {
     margin-top: 2rem;
+}
+
+.result-screen.active div{
+    animation: zoom-in .5s cubic-bezier(0.075, 0.885, 0.32, 1.275);
 }
 
 .pause-screen.active .btn{
     animation: zoom-in .5s cubic-bezier(0.075, 0.885, 0.32, 1.275);
 }
 
+.result-screen .congrate {
+    font-size: x-large;
+    color: var(--blue);
+}
+
+.result-screen .info{
+    color: var(--color-txt);
+    font-size: large
+}
+
+#result-time{
+    color: var(--blue);
+    font-size: x-large;
+}
 .zoom-in{
     animation: zoom-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
 }
@@ -393,5 +412,47 @@ li{
     }
     100%{
         transform: scale(1);
+    }
+}
+
+
+
+@media only screen and (max-width: 800px) {
+    :root {
+        --nav-size: 50px;
+
+        --sudoku-cell-size: 30px;
+
+        --border-radius: 5px;
+
+        --space-y: 5px;
+
+        --gap: 2px;
+
+       font-size: 7px;
+    }
+
+    .input-name,
+    .btn {
+        height: 50px;
+    }
+
+    .main-grid-cell.hover {
+        border-width: 2px;
+    }
+
+    .screen {
+        min-width: unset;
+    }
+
+    .main {
+        height: 100vh;
+        padding: 2rem;
+    }
+
+    .main-game{
+        height: 80%;
+        margin-top: -10rem;
+        padding: 0;
     }
 }
